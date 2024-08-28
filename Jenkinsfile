@@ -21,6 +21,7 @@ pipeline {
         NEXUS_LOGIN = 'nexuslogin'
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
+        SONARPORT ='80'
     }
 
     stages {
