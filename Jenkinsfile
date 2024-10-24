@@ -10,8 +10,8 @@ pipeline {
         RELEASE_REPO = 'vprofile-release'
         CENTRAL_REPO = 'vpro-maven-central'
         NEXUS_VERSION = "nexus3"
-        NEXUS_USER = admin
-        NEXUS_PASS = admin
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'admin'
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "172.31.27.123:8081"
         NEXUS_REPOSITORY = "vprofile-release"
