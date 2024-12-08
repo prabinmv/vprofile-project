@@ -17,6 +17,8 @@ pipeline {
         NEXUS_URL = "172.31.27.123:8081"
         NEXUS_GRP_REPO = 'vprofile-maven-grp'
         NEXUS_CREDENTIAL_ID = "nexuslogin"
+        SONARSERVER = 'sonarserver'
+        SONARSCANNER = 'sonarscanner'
     }
 
     stages {
