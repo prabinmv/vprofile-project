@@ -35,7 +35,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: app-secret
-              key: bdb-pass
+              key: db-pass
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: vpro-db-data
