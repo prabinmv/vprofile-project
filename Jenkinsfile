@@ -66,30 +66,30 @@ pipeline {
 
         stage("Quality Gate") {
             steps {
-                timeout(time: 1, unit: 'HOURS') {
+                timeout(time: 5, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
         }
 
-        // stage("Upload Artifact") {
-        //     steps {
-        //         nexusArtifactUploader(
-        //             nexusVersion: 'nexus3',
-        //             protocol: 'http',
-        //             nexusUrl: "${NEXUS_URL}",
-        //             groupId: 'QA',
-        //             version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
-        //             repository: "${RELEASE_REPO}",
-        //             credentialsId: "${NEXUS_CREDENTIAL_ID}",
-        //             artifacts: [
-        //                 [artifactId: 'vproapp',
-        //                 classifier: '',
-        //                 file: 'target/vprofile-v2.war',
-        //                 type: 'war']
-        //             ]
-        //         )
-        //     }
-        // }
+        stage("Upload Artifact") {
+            steps {
+                nexusArtifactUploader(
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    nexusUrl: "${NEXUS_URL}",
+                    groupId: 'QA',
+                    version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
+                    repository: "${RELEASE_REPO}",
+                    credentialsId: "${NEXUS_CREDENTIAL_ID}",
+                    artifacts: [
+                        [artifactId: 'vproapp',
+                        classifier: '',
+                        file: 'target/vprofile-v2.war',
+                        type: 'war']
+                    ]
+                )
+            }
+        }
     }
 }
