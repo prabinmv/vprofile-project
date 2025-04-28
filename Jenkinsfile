@@ -22,13 +22,13 @@ pipeline {
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
-        //     post {
-        //         success {
-        //             echo "Now Archieving"
-        //             archiveArtifacts artifacts: '**/*.war'
-        //         }
-        //     }
-        // }
+            post {
+                success {
+                    echo "Now Archieving"
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
 
         // stage('Test') {
         //     steps {
@@ -41,6 +41,5 @@ pipeline {
         //         sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
         //     }
         // }
-        }
     }
 }
