@@ -32,13 +32,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn -s settings.xml test'
             }
         }
 
         stage('Checkstyle') {
             steps {
-                sh 'mvn checkstyle:check' // Or use the maven plugin step if needed
+                sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
             }
         }
     }
