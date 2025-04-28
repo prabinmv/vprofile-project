@@ -41,5 +41,6 @@ pipeline {
         //         sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
         //     }
         // }
+        }
     }
 }
