@@ -38,7 +38,7 @@ pipeline {
 
         stage('Checkstyle') {
             steps {
-                sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
+                sh 'mvn -s settings.xml checkstyle:checkstyle' // Or use the maven plugin step if needed
             }
         }
     }
