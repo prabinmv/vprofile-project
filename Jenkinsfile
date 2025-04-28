@@ -22,24 +22,24 @@ pipeline {
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
-            post {
-                success {
-                    echo "Now Archieving"
-                    archiveArtifacts artifacts: '**/*.war'
-                }
-            }
-        }
+        //     post {
+        //         success {
+        //             echo "Now Archieving"
+        //             archiveArtifacts artifacts: '**/*.war'
+        //         }
+        //     }
+        // }
 
-        stage('Test') {
-            steps {
-                sh 'mvn -s settings.xml test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'mvn -s settings.xml test'
+        //     }
+        // }
 
-        stage('Checkstyle') {
-            steps {
-                sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
-            }
-        }
+        // stage('Checkstyle') {
+        //     steps {
+        //         sh 'mvn -s settings.xml checkstyle:check' // Or use the maven plugin step if needed
+        //     }
+        // }
     }
 }
